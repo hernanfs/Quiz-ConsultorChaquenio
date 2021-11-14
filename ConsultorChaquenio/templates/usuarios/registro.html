@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+
+<header class="registro">
+    <div class="container px-4 px-lg-5 h-100">
+        <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+            <div class="col-lg-8 align-self-end">
+                <h1 class="text-white font-weight-bold">Registro</h1>
+                <hr class="divider" />
+                    </div>
+                        <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
+                            <div class="col-lg-6">
+                                <form id="contactForm" data-sb-form-api-token="API_TOKEN" method="POST">{% csrf_token %}
+                                        <div class="align-self-baseline">
+                                        </div>
+                                            {{form.errors}}
+                                            <!-- Name input-->
+                                            <div class="form-floating mb-1">
+                                                <input class="form-control" type="text" name="first_name" placeholder="Ingrese su nombre">
+                                                <label for="name">Nombre y Apellido</label>
+                                                <div class="invalid-feedback" data-sb-feedback="name:required">Se requiere un nombre y apellido</div>
+                                            </div>
+                                            <!-- Localidad input-->
+                                            <div class="form-floating mb-1">
+                                                <input class="form-control" type="text" name="localidad" placeholder="Ingrese su Localidad">
+                                                <label for="name">Localidad</label>
+                                                <div class="invalid-feedback" data-sb-feedback="name:required">Se requiere una localidad</div>
+                                            </div>
+                                            <!-- Email input-->
+                                            <div class="form-floating mb-1">
+                                                <input class="form-control" type="email" name="email" placeholder="Ingrese su email">
+                                                <label for="name">Email</label>
+                                                <div class="invalid-feedback" data-sb-feedback="name:required">Se requiere un email</div>
+                                            </div>
+                                            <!-- User input-->
+                                            <div class="form-floating mb-1">
+                                                <input class="form-control" type="text" name="username" placeholder="Ingrese el usuario">
+                                                <label for="name">Usuario</label>
+                                                <div class="invalid-feedback" data-sb-feedback="name:required">Se requiere un usuario</div>
+                                            </div>
+                                            <!-- Contraseña-->
+                                            <div class="form-floating mb-1">
+                                                <input class="form-control" id="email" type="password" name="password1" placeholder="Ingrese la contraseña">
+                                                <label for="email">Contraseña</label>
+                                                <div class="invalid-feedback" data-sb-feedback="email:required">Se requiere una contraseña</div>
+                                            </div>
+                                            <!-- Contraseña 2-->
+                                             <div class="form-floating mb-1">
+                                                <input class="form-control" id="email" type="password" name="password2" placeholder="Vuelva a ingresar la contraseña">
+                                                <label for="email">Repetir Contraseña</label>
+                                                <div class="invalid-feedback" data-sb-feedback="email:required">Se requiere una contraseña</div>
+                                            </div>
+                                            <br>
+                                            <!-- Submit Button-->
+                                            <input class="btn btn-primary btn-xl" type="submit" name="" value="Registrarme">
+                                </form>
+                            </div>
+                        </div>
+        </div>
+    </div>
+</header>
+
+{% endblock contenido %}
